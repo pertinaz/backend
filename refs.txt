@@ -46,3 +46,9 @@ accountRouter.delete("/:guid", (req, res) => {
 
   return res.send();
 });
+
+
+accountRouter.use((req, res, next) => {
+  console.log(req.ip);
+  next();
+});

@@ -1,17 +1,12 @@
 import express from "express";
-import tmdbInstance from "/axiosIntance.js";
+import tmdbInstance from "./axiosInstance.js";
 
 const accountRouter = express.Router();
-
-accountRouter.use((req, res, next) => {
-  console.log(req.ip);
-  next();
-});
 
 // Obtener peliculas populares
 accountRouter.get("/movies", async (req, res) => {
   try {
-    const response = await tmdbInstance.get("/popular/movies");
+    const response = await tmdbInstance.get("/movie/popular");
     res.json(response.data);
   } catch (error) {
     res.status(500).send("Error finding the movies");
@@ -21,7 +16,7 @@ accountRouter.get("/movies", async (req, res) => {
 // Obtener programas de TV populares
 accountRouter.get("/shows", async (req, res) => {
   try {
-    const response = await tmdbInstance.get("/popular/tv");
+    const response = await tmdbInstance.get("/tv/popular");
     res.json(response.data);
   } catch (error) {
     res.status(500).send("Error retriving TV shows");
@@ -31,7 +26,7 @@ accountRouter.get("/shows", async (req, res) => {
 // Obtener personas populares
 accountRouter.get("/people", async (req, res) => {
   try {
-    const response = await tmdbInstance.get("/popular/person");
+    const response = await tmdbInstance.get("/person/popular");
     res.json(response.data);
   } catch (error) {
     res.status(500).send("Error retriving people");
