@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import accountRouter from "./routes/account.js";
+import accountRouter from "./routes/service.js";
 
 // MIDDLEWARE AND ROUTER
 
@@ -12,10 +12,6 @@ const expressApp = express();
 
 expressApp.use(express.json());
 expressApp.use(accountRouter);
-
-expressApp.get("/raiz", (req, res) => {
-  res.send("Root Endpoint");
-});
 
 // SERVIDOR EN EL PUERTO 3000
 expressApp.listen(PORT, () =>
