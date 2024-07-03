@@ -11,18 +11,17 @@ const PORT = process.env.PORT || 3000;
 const expressApp = express();
 
 expressApp.use(express.json());
-expressApp.use("/account", accountRouter);
+expressApp.use(accountRouter);
 
-expressApp.get("/raiz",(req,res) => {
-    res.send();
+expressApp.get("/raiz", (req, res) => {
+  res.send("Root Endpoint");
 });
 
-// Rutas de prueba
+// SERVIDOR EN EL PUERTO 3000
 expressApp.listen(PORT, () =>
   console.log(`Servidor montado en el puerto ${PORT}`)
 );
 
 //VARIABLES DE ENTORNO  dirigirse a .env
 
-
-// POSTMAN: Nos ayuda a organizar nuestras API, crear y organizar nuestros Endpoints y compartirlos con nuestro equipo o quien quieramos
+// POSTMAN: Usado para probar y organizar nuestros API endpoints
