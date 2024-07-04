@@ -7,6 +7,14 @@ const tmdbInstance = axios.create({
   headers: {
     Autorization: `Bearer ${key}`,
   },
+  params: {
+    id: 1,
+    page: 1,
+    region: "us-east-1",
+    language: "en-US", // ISO 639-1
+    query: "SELECT * FROM",
+    genre: "Any",
+  },
 });
 
 export default tmdbInstance;
