@@ -1,6 +1,13 @@
 import { Router } from "express";
 import { trending } from "../controller/trendingController.js";
 
-export const trendingRouter = Router();
+const trendingRouter = Router();
 
-trendingRouter.get(trending);
+trendingRouter.get("/", (req, res) => {
+  // root path of the server
+  res.send("PORT HAS BEEN OPENED");
+});
+
+trendingRouter.get("/trending", trending);
+
+export default trendingRouter;

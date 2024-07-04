@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import moviesRouter from "./routes/moviesRoutingService.js";
 import showsRouter from "./routes/showsRoutingService.js";
 import peopleRouter from "./routes/peopleRoutingService.js";
+import trendingRouter from "./routes/trendingRoutingService.js";
 
 // MIDDLEWARE AND ROUTER
 
@@ -17,6 +18,7 @@ expressApp.use(express.json());
 expressApp.use(moviesRouter);
 expressApp.use(showsRouter);
 expressApp.use(peopleRouter);
+expressApp.use(trendingRouter);
 
 // SERVIDOR EN EL PUERTO 3000
 expressApp.listen(PORT, () =>
