@@ -5,6 +5,7 @@ import showsRouter from "./routes/showsRoutingService.js";
 import peopleRouter from "./routes/peopleRoutingService.js";
 import trendingRouter from "./routes/trendingRoutingService.js";
 import loggerMiddleware from "./middlewares/logger.js";
+import errorHandler from "./middlewares/errorHandler.js";
 
 // MIDDLEWARE AND ROUTER
 
@@ -17,6 +18,7 @@ const expressApp = express();
 
 expressApp.use(express.json());
 expressApp.use(loggerMiddleware);
+expressApp.use(errorHandler);
 expressApp.use(moviesRouter);
 expressApp.use(showsRouter);
 expressApp.use(peopleRouter);

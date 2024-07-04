@@ -13,9 +13,9 @@ export const movieDetails =
       });
       res.json(response.json());
     } catch (error) {
-      res
-        .status(503)
-        .send("The API is undergoing maintenance. Try again later.");
+        error.statusCode = 503;
+        error.message = "The API is undergoing maintenance. Try again later.";
+        next(error); // Pasar el error al middleware de manejo de errores
     }
   });
 
@@ -44,8 +44,8 @@ export const moviesList =
       });
       res.json(response.data);
     } catch (error) {
-      res
-        .status(503)
-        .send("The API is undergoing maintenance. Try again later.");
+        error.statusCode = 503;
+        error.message = "The API is undergoing maintenance. Try again later.";
+        next(error); // Pasar el error al middleware de manejo de errores
     }
   });
