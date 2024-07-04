@@ -1,6 +1,7 @@
 import axios from "axios";
-require("dotenv").config();
+import dotenv from "dotenv";
 
+dotenv.config();
 const tmdbInstance = axios.create({
   baseURL: "https://api.themoviedb.org/3",
   headers: {
@@ -8,4 +9,4 @@ const tmdbInstance = axios.create({
   },
 });
 
-module.exports = tmdbInstance;
+export default tmdbInstance;
