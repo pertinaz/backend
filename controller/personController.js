@@ -1,11 +1,11 @@
 import tmdbInstance from "./axiosInstance";
 
-// Specific movie details
-export const showDetails =
-  ("/tv/:id",
+// Specific person details
+export const personDetails =
+  ("/person/:id",
   async (req, res) => {
     try {
-      const response = await tmdbInstance.get("/tv/:id");
+      const response = await tmdbInstance.get("/person/:id");
       res.json(response.json());
     } catch (error) {
       res
@@ -14,12 +14,12 @@ export const showDetails =
     }
   });
 
-//List of popular movies
-export const showsList =
-  ("/tv",
+//List of popular people
+export const popularPeople =
+  ("/person",
   async (req, res) => {
     try {
-      const response = await tmdbInstance.get("/tv/popular");
+      const response = await tmdbInstance.get("/person/popular");
       res.json(response.data);
     } catch (error) {
       res

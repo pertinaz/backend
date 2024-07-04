@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import accountRouter from "./routes/service.js";
+import accountRouter from "./routes/moviesRoutingService.js";
 
 // MIDDLEWARE AND ROUTER
 
