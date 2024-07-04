@@ -1,12 +1,14 @@
 import { Router } from "express";
-import { showDetails, showsList } from "../controller/showsController";
+import { showDetails, showsList } from "../controller/showsController.js";
 
-const router = Router();
+const showsRouter = Router();
 
-router.get("/", (req, res) => {
+showsRouter.get("/", (req, res) => {
   // root path of the server
   res.send("PORT HAS BEEN OPENED");
 });
 
-router.get("/tv/:id", showDetails); // request a movie
-router.get("/tv/popular", showsList); // request a range of movies
+showsRouter.get("/tv/:id", showDetails); // request a movie
+showsRouter.get("/tv/popular", showsList); // request a range of movies
+
+export default showsRouter;

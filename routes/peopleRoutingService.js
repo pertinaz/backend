@@ -1,12 +1,17 @@
 import { Router } from "express";
-import { personDetails, popularPeople } from "../controller/personController";
+import {
+  personDetails,
+  popularPeople,
+} from "../controller/personController.js";
 
-const router = Router();
+const peopleRouter = Router();
 
-router.get("/", (req, res) => {
+peopleRouter.get("/", (req, res) => {
   // root path of the server
   res.send("PORT HAS BEEN OPENED");
 });
 
-router.get("/person/:id", personDetails);
-router.get("/popular/person", popularPeople);
+peopleRouter.get("/person/:id", personDetails);
+peopleRouter.get("/popular/person", popularPeople);
+
+export default peopleRouter;

@@ -1,5 +1,4 @@
-import tmdbInstance from "./axiosInstance";
-
+import tmdbInstance from "../axiosInstance.js";
 // Specific movie details
 export const showDetails =
   ("/tv/:id",

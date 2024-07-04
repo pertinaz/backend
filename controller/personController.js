@@ -1,4 +1,4 @@
-import tmdbInstance from "./axiosInstance";
+import tmdbInstance from "../axiosInstance.js";
 
 // Specific person details
 export const personDetails =
