@@ -9,7 +9,7 @@ accountRouter.get("/movies", async (req, res) => {
     const response = await tmdbInstance.get("/movie/popular");
     res.json(response.data);
   } catch (error) {
-    res.status(500).send("Error finding the movies");
+    res.status(503).send("The API is undergoing maintenance. Try again later.");
   }
 });
 
@@ -19,7 +19,7 @@ accountRouter.get("/shows", async (req, res) => {
     const response = await tmdbInstance.get("/tv/popular");
     res.json(response.data);
   } catch (error) {
-    res.status(500).send("Error retriving TV shows");
+    res.status(503).send("The API is undergoing maintenance. Try again later.");
   }
 });
 
@@ -29,7 +29,7 @@ accountRouter.get("/people", async (req, res) => {
     const response = await tmdbInstance.get("/person/popular");
     res.json(response.data);
   } catch (error) {
-    res.status(500).send("Error retriving people");
+    res.status(503).send("The API is undergoing maintenance. Try again later."); // other https status of the 500 server errors
   }
 });
 
