@@ -4,6 +4,7 @@ import moviesRouter from "./routes/moviesRoutingService.js";
 import showsRouter from "./routes/showsRoutingService.js";
 import peopleRouter from "./routes/peopleRoutingService.js";
 import trendingRouter from "./routes/trendingRoutingService.js";
+import loggerMiddleware from "./middlewares/logger.js";
 
 // MIDDLEWARE AND ROUTER
 
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 3000;
 const expressApp = express();
 
 expressApp.use(express.json());
+expressApp.use(loggerMiddleware);
 expressApp.use(moviesRouter);
 expressApp.use(showsRouter);
 expressApp.use(peopleRouter);
